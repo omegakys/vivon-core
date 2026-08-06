@@ -18,8 +18,8 @@ public class WebSocketConfig implements WebSocketConfigurer {
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
         registry
-            .addHandler(chatWebSocketHandler, "/ws/chat")
-            .addInterceptors(jwtInterceptor)
-            .setAllowedOrigins(System.getenv("FRONTEND_URL")); // Use environment variable
+                .addHandler(chatWebSocketHandler, "/ws/chat")
+                .addInterceptors(jwtInterceptor)
+                .setAllowedOriginPatterns("*");
     }
 }
